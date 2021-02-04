@@ -181,6 +181,26 @@ namespace Ohana3DS_Rebirth.GUI
             }
         }
 
+        private void ExportAll_Click(object sender, EventArgs e)
+        {
+            switch (type)
+            {
+                case FileIO.fileType.skeletalAnimation:
+                    if (renderer.CurrentModel == -1)
+                    {
+                        MessageBox.Show(
+                            "A skeleton is necessary to export an Skeletal Animation." + Environment.NewLine +
+                            "You must select a model before exporting!",
+                            "Warning",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Exclamation);
+                        return;
+                    }
+                    if (control.CurrentAnimation == -1) return;
+                    FileIO.exportAll(type, renderer.models, renderer.CurrentModel, animations.list.Count);
+                    break;
+            }
+        }
         private void BtnDelete_Click(object sender, EventArgs e)
         {
             if (AnimationsList.SelectedIndex == -1) return;
@@ -205,5 +225,11 @@ namespace Ohana3DS_Rebirth.GUI
             animations.list.Clear();
             updateList();
         }
+
+        private void TopControls_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
     }
 }

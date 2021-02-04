@@ -45,7 +45,14 @@ namespace Ohana3DS_Rebirth.GUI
             if (importedData != null)
             {
                 renderer.models.model.AddRange((List<RenderBase.OModel>)importedData);
-                foreach (RenderBase.OModel model in (List<RenderBase.OModel>)importedData) ModelList.addItem(model.name);
+                int index = 0;
+                foreach (RenderBase.OModel model in (List<RenderBase.OModel>)importedData)
+                {
+
+                    ModelList.addItem(FileIO.modelFileNames[index]);
+                    index++;
+                }
+                //foreach (RenderBase.OModel model in (List<RenderBase.OModel>)importedData) ModelList.addItem(model.name);
                 ModelList.Refresh();
             }
         }
@@ -65,6 +72,17 @@ namespace Ohana3DS_Rebirth.GUI
             renderer.CurrentModel = -1;
             renderer.models.model.Clear();
             updateList();
+        }
+
+        private void BtnImpBatchBin_Click(object sender, EventArgs e)
+        {
+            object importedData = FileIO.import(FileIO.fileType.model);
+            if (importedData != null)
+            {
+                renderer.models.model.AddRange((List<RenderBase.OModel>)importedData);
+                foreach (RenderBase.OModel model in (List<RenderBase.OModel>)importedData) ModelList.addItem(model.name);
+                ModelList.Refresh();
+            }
         }
     }
 }

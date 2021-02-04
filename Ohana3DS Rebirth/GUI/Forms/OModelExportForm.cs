@@ -82,12 +82,14 @@ namespace Ohana3DS_Rebirth.GUI.Forms
             {
                 for (int i = 0; i < mdls.model.Count; i++)
                 {
-                    string fileName = Path.Combine(TxtOutFolder.Text, mdls.model[i].name);
+                    //string fileName = Path.Combine(TxtOutFolder.Text, mdls.model[i].name);
+                    string fileName = Path.Combine(TxtOutFolder.Text, FileIO.modelFileNames[i]);
 
                     switch (format)
                     {
                         case 0: DAE.export(mdls, fileName + ".dae", i); break;
                         case 1: SMD.export(mdls, fileName + ".smd", i); break;
+                        //case 1: SMD.export(mdls, fileName + ".smd", i); break;
                         case 2: OBJ.export(mdls, fileName + ".obj", i); break;
                         case 3: CMDL.export(mdls, fileName + ".cmdl", i); break;
                     }

@@ -23,8 +23,8 @@
         #region código gerado pelo Component Designer
 
         /// <summary>
-        /// Método necessário para suporte do Designer - não modifique
-        /// o conteúdo deste método com o editor de código.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
@@ -51,9 +51,11 @@
             this.TopControls.Dock = System.Windows.Forms.DockStyle.Top;
             this.TopControls.Location = new System.Drawing.Point(0, 0);
             this.TopControls.Name = "TopControls";
-            this.TopControls.RowCount = 1;
-            this.TopControls.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.TopControls.Size = new System.Drawing.Size(256, 24);
+            this.TopControls.RowCount = 2;
+            this.TopControls.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.TopControls.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.TopControls.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.TopControls.Size = new System.Drawing.Size(256, 46);
             this.TopControls.TabIndex = 6;
             // 
             // BtnDelete
@@ -66,7 +68,7 @@
             this.BtnDelete.Location = new System.Drawing.Point(130, 2);
             this.BtnDelete.Margin = new System.Windows.Forms.Padding(2);
             this.BtnDelete.Name = "BtnDelete";
-            this.BtnDelete.Size = new System.Drawing.Size(60, 20);
+            this.BtnDelete.Size = new System.Drawing.Size(60, 19);
             this.BtnDelete.TabIndex = 9;
             this.BtnDelete.Text = "Delete";
             this.BtnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
@@ -81,7 +83,7 @@
             this.BtnClear.Location = new System.Drawing.Point(194, 2);
             this.BtnClear.Margin = new System.Windows.Forms.Padding(2);
             this.BtnClear.Name = "BtnClear";
-            this.BtnClear.Size = new System.Drawing.Size(60, 20);
+            this.BtnClear.Size = new System.Drawing.Size(60, 19);
             this.BtnClear.TabIndex = 8;
             this.BtnClear.Text = "Clear";
             this.BtnClear.Click += new System.EventHandler(this.BtnClear_Click);
@@ -96,7 +98,7 @@
             this.BtnExport.Location = new System.Drawing.Point(2, 2);
             this.BtnExport.Margin = new System.Windows.Forms.Padding(2);
             this.BtnExport.Name = "BtnExport";
-            this.BtnExport.Size = new System.Drawing.Size(60, 20);
+            this.BtnExport.Size = new System.Drawing.Size(60, 19);
             this.BtnExport.TabIndex = 7;
             this.BtnExport.Text = "Export";
             this.BtnExport.Click += new System.EventHandler(this.BtnExport_Click);
@@ -111,7 +113,7 @@
             this.BtnImport.Location = new System.Drawing.Point(66, 2);
             this.BtnImport.Margin = new System.Windows.Forms.Padding(2);
             this.BtnImport.Name = "BtnImport";
-            this.BtnImport.Size = new System.Drawing.Size(60, 20);
+            this.BtnImport.Size = new System.Drawing.Size(60, 19);
             this.BtnImport.TabIndex = 6;
             this.BtnImport.Text = "Import";
             this.BtnImport.Click += new System.EventHandler(this.BtnImport_Click);
@@ -123,10 +125,10 @@
             this.ModelList.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ModelList.HeaderHeight = 24;
             this.ModelList.ItemHeight = 24;
-            this.ModelList.Location = new System.Drawing.Point(0, 24);
+            this.ModelList.Location = new System.Drawing.Point(0, 46);
             this.ModelList.Name = "ModelList";
             this.ModelList.SelectedIndex = -1;
-            this.ModelList.Size = new System.Drawing.Size(256, 232);
+            this.ModelList.Size = new System.Drawing.Size(256, 210);
             this.ModelList.TabIndex = 9;
             this.ModelList.SelectedIndexChanged += new System.EventHandler(this.ModelList_SelectedIndexChanged);
             // 
@@ -143,13 +145,13 @@
 
         }
 
-        #endregion
-
-        private OButton BtnImport;
-        private OButton BtnExport;
-        private OButton BtnClear;
-        private OButton BtnDelete;
+        private Ohana3DS_Rebirth.GUI.OButton BtnClear;
+        private Ohana3DS_Rebirth.GUI.OButton BtnDelete;
+        private Ohana3DS_Rebirth.GUI.OButton BtnExport;
+        private Ohana3DS_Rebirth.GUI.OButton BtnImport;
+        private Ohana3DS_Rebirth.GUI.OList ModelList;
         private System.Windows.Forms.TableLayoutPanel TopControls;
-        private OList ModelList;
+
+        #endregion
     }
 }

@@ -245,6 +245,7 @@ namespace Ohana3DS_Rebirth.Ohana
         /// </summary>
         /// <param name="type">The type of the data</param>
         /// <returns></returns>
+        public static List<string> modelFileNames;
         public static object import(fileType type)
         {
             using (OpenFileDialog openDlg = new OpenFileDialog())
@@ -254,6 +255,7 @@ namespace Ohana3DS_Rebirth.Ohana
                 switch (type)
                 {
                     case fileType.model:
+                        modelFileNames = new List<string>();
                         openDlg.Title = "Import models";
                         openDlg.Filter = "All files|*.*";
 
@@ -263,6 +265,9 @@ namespace Ohana3DS_Rebirth.Ohana
                             foreach (string fileName in openDlg.FileNames)
                             {
                                 output.AddRange(((RenderBase.OModelGroup)load(fileName).data).model);
+                                string name = fileName.Split('\\')[3].Split('.')[0];
+                                modelFileNames.Add(name);
+                                modelFileNames.Add(name + "_lowPoly");
                             }
                             return output;
                         }
@@ -369,6 +374,21 @@ namespace Ohana3DS_Rebirth.Ohana
                             }
                         }
                         break;
+                }
+            }
+        }
+
+        public static void exportAll(fileType type, object data, int currentModelIndex, int allAnimsLen)
+        {
+            using (SaveFileDialog saveDlg = new SaveFileDialog())
+            {
+                saveDlg.Title = "Export Skeletal Animation";
+                //saveDlg.Filter = "Source Model|*.smd";
+                saveDlg.FileName = "Anim";
+                if (saveDlg.ShowDialog() == DialogResult.OK)
+                {
+
+                    SMD.exportAllAnims((RenderBase.OModelGroup)data, saveDlg.FileName, currentModelIndex, allAnimsLen);
                 }
             }
         }

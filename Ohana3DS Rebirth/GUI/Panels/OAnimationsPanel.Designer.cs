@@ -22,9 +22,9 @@
 
         #region código gerado pelo Component Designer
 
-        /// <summary> 
-        /// Método necessário para o suporte do Designer - não modifique 
-        /// o conteúdo deste método com o editor de código.
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
@@ -34,8 +34,9 @@
             this.BtnPrevious = new System.Windows.Forms.PictureBox();
             this.BtnNext = new System.Windows.Forms.PictureBox();
             this.TopControls = new System.Windows.Forms.TableLayoutPanel();
-            this.BtnDelete = new Ohana3DS_Rebirth.GUI.OButton();
+            this.ExportAll = new Ohana3DS_Rebirth.GUI.OButton();
             this.BtnClear = new Ohana3DS_Rebirth.GUI.OButton();
+            this.BtnDelete = new Ohana3DS_Rebirth.GUI.OButton();
             this.BtnExport = new Ohana3DS_Rebirth.GUI.OButton();
             this.BtnImport = new Ohana3DS_Rebirth.GUI.OButton();
             this.AnimationsList = new Ohana3DS_Rebirth.GUI.OList();
@@ -133,17 +134,48 @@
             this.TopControls.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.TopControls.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.TopControls.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.TopControls.Controls.Add(this.BtnDelete, 0, 0);
+            this.TopControls.Controls.Add(this.ExportAll, 0, 1);
             this.TopControls.Controls.Add(this.BtnClear, 0, 0);
+            this.TopControls.Controls.Add(this.BtnDelete, 0, 0);
             this.TopControls.Controls.Add(this.BtnExport, 0, 0);
             this.TopControls.Controls.Add(this.BtnImport, 0, 0);
             this.TopControls.Dock = System.Windows.Forms.DockStyle.Top;
             this.TopControls.Location = new System.Drawing.Point(0, 0);
             this.TopControls.Name = "TopControls";
-            this.TopControls.RowCount = 1;
-            this.TopControls.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.TopControls.Size = new System.Drawing.Size(256, 24);
+            this.TopControls.RowCount = 2;
+            this.TopControls.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.TopControls.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.TopControls.Size = new System.Drawing.Size(256, 49);
             this.TopControls.TabIndex = 9;
+            this.TopControls.Paint += new System.Windows.Forms.PaintEventHandler(this.TopControls_Paint);
+            // 
+            // ExportAll
+            // 
+            this.ExportAll.BackColor = System.Drawing.Color.Transparent;
+            this.ExportAll.Centered = true;
+            this.ExportAll.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ExportAll.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExportAll.Image = null;
+            this.ExportAll.Location = new System.Drawing.Point(2, 26);
+            this.ExportAll.Margin = new System.Windows.Forms.Padding(2);
+            this.ExportAll.Name = "ExportAll";
+            this.ExportAll.Size = new System.Drawing.Size(60, 21);
+            this.ExportAll.TabIndex = 13;
+            this.ExportAll.Text = "Export All";
+            // 
+            // BtnClear
+            // 
+            this.BtnClear.BackColor = System.Drawing.Color.Transparent;
+            this.BtnClear.Centered = true;
+            this.BtnClear.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnClear.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnClear.Image = null;
+            this.BtnClear.Location = new System.Drawing.Point(194, 2);
+            this.BtnClear.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnClear.Name = "BtnClear";
+            this.BtnClear.Size = new System.Drawing.Size(60, 20);
+            this.BtnClear.TabIndex = 10;
+            this.BtnClear.Text = "Clear";
             // 
             // BtnDelete
             // 
@@ -151,7 +183,7 @@
             this.BtnDelete.Centered = true;
             this.BtnDelete.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BtnDelete.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnDelete.Image = global::Ohana3DS_Rebirth.Properties.Resources.ui_icon_videodelete;
+            this.BtnDelete.Image = null;
             this.BtnDelete.Location = new System.Drawing.Point(130, 2);
             this.BtnDelete.Margin = new System.Windows.Forms.Padding(2);
             this.BtnDelete.Name = "BtnDelete";
@@ -160,29 +192,14 @@
             this.BtnDelete.Text = "Delete";
             this.BtnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
-            // BtnClear
-            // 
-            this.BtnClear.BackColor = System.Drawing.Color.Transparent;
-            this.BtnClear.Centered = true;
-            this.BtnClear.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnClear.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnClear.Image = global::Ohana3DS_Rebirth.Properties.Resources.ui_icon_trash;
-            this.BtnClear.Location = new System.Drawing.Point(194, 2);
-            this.BtnClear.Margin = new System.Windows.Forms.Padding(2);
-            this.BtnClear.Name = "BtnClear";
-            this.BtnClear.Size = new System.Drawing.Size(60, 20);
-            this.BtnClear.TabIndex = 8;
-            this.BtnClear.Text = "Clear";
-            this.BtnClear.Click += new System.EventHandler(this.BtnClear_Click);
-            // 
             // BtnExport
             // 
             this.BtnExport.BackColor = System.Drawing.Color.Transparent;
             this.BtnExport.Centered = true;
             this.BtnExport.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BtnExport.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnExport.Image = global::Ohana3DS_Rebirth.Properties.Resources.ui_icon_arrowup;
-            this.BtnExport.Location = new System.Drawing.Point(2, 2);
+            this.BtnExport.Image = null;
+            this.BtnExport.Location = new System.Drawing.Point(66, 2);
             this.BtnExport.Margin = new System.Windows.Forms.Padding(2);
             this.BtnExport.Name = "BtnExport";
             this.BtnExport.Size = new System.Drawing.Size(60, 20);
@@ -196,8 +213,8 @@
             this.BtnImport.Centered = true;
             this.BtnImport.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BtnImport.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnImport.Image = global::Ohana3DS_Rebirth.Properties.Resources.ui_icon_arrowdown;
-            this.BtnImport.Location = new System.Drawing.Point(66, 2);
+            this.BtnImport.Image = null;
+            this.BtnImport.Location = new System.Drawing.Point(2, 2);
             this.BtnImport.Margin = new System.Windows.Forms.Padding(2);
             this.BtnImport.Name = "BtnImport";
             this.BtnImport.Size = new System.Drawing.Size(60, 20);
@@ -211,10 +228,10 @@
             this.AnimationsList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.AnimationsList.HeaderHeight = 24;
             this.AnimationsList.ItemHeight = 24;
-            this.AnimationsList.Location = new System.Drawing.Point(0, 24);
+            this.AnimationsList.Location = new System.Drawing.Point(0, 49);
             this.AnimationsList.Name = "AnimationsList";
             this.AnimationsList.SelectedIndex = -1;
-            this.AnimationsList.Size = new System.Drawing.Size(256, 168);
+            this.AnimationsList.Size = new System.Drawing.Size(256, 143);
             this.AnimationsList.TabIndex = 7;
             this.AnimationsList.SelectedIndexChanged += new System.EventHandler(this.AnimationsList_SelectedIndexChanged);
             // 
@@ -265,20 +282,21 @@
 
         }
 
-        #endregion
-
-        private OSeekBar Seeker;
-        private System.Windows.Forms.TableLayoutPanel ControlsPanel;
-        private System.Windows.Forms.PictureBox BtnPlayPause;
-        private System.Windows.Forms.PictureBox BtnStop;
-        private System.Windows.Forms.PictureBox BtnPrevious;
+        protected Ohana3DS_Rebirth.GUI.OList AnimationsList;
+        private Ohana3DS_Rebirth.GUI.OButton BtnClear;
+        private Ohana3DS_Rebirth.GUI.OButton BtnDelete;
+        private Ohana3DS_Rebirth.GUI.OButton BtnExport;
+        private Ohana3DS_Rebirth.GUI.OButton BtnImport;
         private System.Windows.Forms.PictureBox BtnNext;
-        protected OList AnimationsList;
+        private System.Windows.Forms.PictureBox BtnPlayPause;
+        private System.Windows.Forms.PictureBox BtnPrevious;
+        private System.Windows.Forms.PictureBox BtnStop;
+        private System.Windows.Forms.TableLayoutPanel ControlsPanel;
+        private Ohana3DS_Rebirth.GUI.OButton ExportAll;
+        private Ohana3DS_Rebirth.GUI.OSeekBar Seeker;
+        private Ohana3DS_Rebirth.GUI.OSeekBar Speed;
         private System.Windows.Forms.TableLayoutPanel TopControls;
-        private OButton BtnDelete;
-        private OButton BtnClear;
-        private OButton BtnExport;
-        private OButton BtnImport;
-        private OSeekBar Speed;
+
+        #endregion
     }
 }
